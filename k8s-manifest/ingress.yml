@@ -1,3 +1,4 @@
+# Ingress resource for the application
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -7,8 +8,9 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - http:
-      paths:
+  - host: my-gowebapp.local
+    http:
+      paths: 
       - path: /
         pathType: Prefix
         backend:
